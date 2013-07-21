@@ -6,23 +6,23 @@ head
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(name='description', content='')
     meta(name='author', content='')
-    link(href='public/stylesheets/bootstrap.css', rel='stylesheet')
-    link(href='public/stylesheets/bootstrap-responsive.css', rel='stylesheet')
-    link(rel='stylesheet', href='public/font-awesome/css/font-awesome.min.css')
-    link(href='public/stylesheets/customize.css', rel='stylesheet')
-    script(src='js/jquery-2.0.3.min.js')
-    script(type='text/javascript', src='public/javascripts/coolclock.js')
-    script(type='text/javascript', src='public/javascripts/moreskins.js')
+    link(href='/stylesheets/bootstrap.css', rel='stylesheet')
+    link(href='/stylesheets/bootstrap-responsive.css', rel='stylesheet')
+    link(rel='stylesheet', href='/font-awesome/css/font-awesome.min.css')
+    link(href='/stylesheets/customize.css', rel='stylesheet')
+    script(src='/javascripts/jquery-2.0.3.min.js')
+    script(type='text/javascript', src='/javascripts/coolclock.js')
+    script(type='text/javascript', src='/javascripts/moreskins.js')
   body
     .subnav
       ul.nav.nav-pills
-        li.
+        li
           a(href='#typography') Đăng nhập
-        li.
+        li
           a(href='#navbar') Đăng kí
-        li.
+        li
           a(href='#navbar') Thêm mới
-        li.
+        li
           a(href='#buttons') About
     .container
       .row.centered
@@ -33,4 +33,4 @@ head
             input.input-xxlarge(type='text', placeholder='Thời gian mở cửa của ...', x-webkit-speech='x-webkit-speech', speech='speech')
             button.btn.btn-success(type='button')
               i.icon-search
-    script(src='pulic/javascripts/bootstrap.js')
+    script(src='/javascripts/bootstrap.js')

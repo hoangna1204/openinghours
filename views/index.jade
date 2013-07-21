@@ -1,14 +1,13 @@
 extends layout
 
 block content
-  div(id="wrap")
-     div(class="container")
-         div(class="row centered")
-             canvas(id = "c1", class="CoolClock", width="170", height="170", style="width:170px; height:170px;")
-             h2(class="bigText") Giờ mở cửa
-             div(class="input-append")
-                 input(id="txt_search", class="input-xxlarge", type="text", placeholder="Thời gian mở cửa của ...", x-webkit-speech speech)
-                 button(id="btn_search", class="btn btn-success", type="button")
-                     i(class="icon-search")
-         div(id="push")
-         a(href="/search/aaa") hoang
+    .container
+      .row.centered
+        canvas#c1.CoolClock(width='170', height='170')
+        h2.bigText Giờ mở cửa
+        form
+          .input-append
+            input.input-xxlarge(type='text', placeholder='Thời gian mở cửa của ...', x-webkit-speech='x-webkit-speech', speech='speech')
+            button.btn.btn-success(type='button')
+              i.icon-search
+    script(src='/javascripts/bootstrap.js')

@@ -10,7 +10,7 @@
 var express = require('express')
   , http = require('http')
   , path = require('path')
-
+  , dev = require('./routes/dev')
   , routes = require('./routes')
   , user = require('./routes/user')
   , admin = require('./routes/admin')
@@ -43,6 +43,8 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/hello',new_hi.hello);
 app.get('/hello/r',new_hi.helloRend);
+app.get('/dev/index4', dev.index4);
+
 app.get('/search/:key',search.doSearch);
 
 //Create
