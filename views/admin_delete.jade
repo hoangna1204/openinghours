@@ -1,0 +1,8 @@
+extends layout
+block content
+    h1= title
+    div(class="delete_admin")
+        form( method="post", action="")
+             span Are you sure to delete this admin: 
+             span #{admin.email}
+             input(type="submit", value="Delete")
