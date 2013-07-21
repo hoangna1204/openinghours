@@ -1,11 +1,23 @@
 extends layout
-
+- var count = 1
 block content
-    h1= title
-    #admins
-      - each admin in admins
-        .admin
-          .id
-             a(href="admin/view/" + admin._id.toHexString()) #{admin._id}
-          .email #{admin.email}
-          .password #{admin.password}
+	.container
+		h3= title
+		.row
+			.span6
+				#admins
+					table(class="table")
+						thead
+							tr
+								td #
+								td email
+								td password
+								td
+						tbody
+							- each admin in admins
+								tr
+									td #{count}
+									td #{admin.email}
+									td #{admin.password}
+									td 
+										a(href="admin/view/" + admin._id.toHexString()) view
