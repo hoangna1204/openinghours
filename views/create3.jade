@@ -1,0 +1,220 @@
+!!! 5
+html(lang='en')
+head
+    meta(charset='utf-8')
+    title Thêm dịch vụ
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    //
+       Le styles 
+    link(href='css/bootstrap.css', rel='stylesheet')
+    link(href='css/bootstrap-responsive.css', rel='stylesheet')
+    link(rel='stylesheet', href='font-awesome/css/font-awesome.min.css')
+    link(href='css/bootstrap-timepicker.min.css', rel='stylesheet')
+    link(href='css/customize.css', rel='stylesheet')
+    link(rel='stylesheet', href='http://cdn.leafletjs.com/leaflet-0.6.3/leaflet.css')
+    script(src='js/jquery-2.0.3.min.js')
+    script(type='text/javascript', src='js/coolclock.js')
+    script(type='text/javascript', src='js/moreskins.js')
+    script(src='http://cdn.leafletjs.com/leaflet-0.6.3/leaflet.js')
+    script(src='js/bootstrap-timepicker.min.js')
+  body
+    .subnav
+      ul.nav.nav-pills
+        li.
+          a(href='#typography') Đăng nhập
+        li.
+          a(href='#navbar') Đăng kí
+        li.
+          a(href='#navbar') Thêm mới
+        li.
+          a(href='#buttons') About
+    .container
+      .row.centered
+        form
+          .input-append
+            input.input-xxlarge(type='text', placeholder='Thời gian mở cửa của ...', x-webkit-speech='x-webkit-speech', speech='speech')
+            button.btn.btn-success(type='button')
+              i.icon-search
+    //
+       /container 
+    //
+       Create new record 
+    .container
+      hgroup
+        h3 Thêm mới dịch vụ
+      form.form-horizontal.j-form(action='', method='post')
+        fieldset
+          .container-fluid
+            .row-fluid
+              .span6
+                .control-group
+                  label.control-label(for='id_is_owner') Dịch vụ này của tôi
+                  .controls
+                    input#id_is_owner(type='checkbox', name='is_owner', title='Are you the owner?')
+                .control-group
+                  label.control-label(for='id_name')
+                    | Tên
+                    span.b-required *
+                  .controls
+                    input#id_name(type='text', name='name', value='', placeholder='Tên dịch vụ')
+                .control-group
+                  label.control-label(for='id_city')
+                    | Thành phố
+                    span.b-required *
+                  .controls
+                    input#id_city.ui-autocomplete-input(type='text', name='city', value='', placeholder='Tên thành phố', autocomplete='off')
+                    span.ui-helper-hidden-accessible(role='status', aria-live='polite')
+                    input#id_city_id(name='city_id', type='hidden')
+                .control-group
+                  label.control-label(for='id_street')
+                    | Số nhà, địa chỉ
+                    span.b-required
+                      | *
+                  .controls
+                    input#id_street(type='text', name='street', value='', placeholder='Số nhà, địa chỉ')
+                .control-group
+                  label.control-label(for='id_website') Trang Web
+                  .controls
+                    input#id_website(type='text', name='website', value='', placeholder='http://example.com')
+                .control-group
+                  label.control-label(for='id_phone') Điện thoại
+                  .controls
+                    input#id_phone(type='text', name='phone', value='', placeholder='09938177232')
+                .control-group
+                  label.control-label(for='id_fax')
+                    | Fax
+                  .controls
+                    input#id_fax(type='text', name='fax', value='', placeholder='82983728')
+                .control-group
+                  label.control-label(for='id_main_category')
+                    | Danh mục
+                    span.b-required *
+                  .controls
+                    select#id_main_category.input-xlarge(name='main_category')
+                      option(value='') Chọn danh mục
+                .control-group
+                  label.control-label(for='id_description') Miêu tả
+                  .controls
+                    textarea#id_description.input-xlarge(name='description', rows='5', placeholder='')
+              .span6
+                label.control-label(for='id_hours')
+                  | Thời gian mở cửa
+                  span.b-required *
+                //
+                   table 
+                table.table.table-bordered.table-striped.table-condensed(data-type='normal')
+                  thead
+                    tr
+                      th Ngày
+                      th Thời gian
+                      th
+                  tbody
+                    tr(data-weekday='mon')
+                      td(style='vertical-align: middle;') Thứ 2
+                      td#test.ctrl-limit(style='vertical-align: middle;')
+                        .j-day-hours
+                          input.input-small.time-field(type='text', placeholder='mở')
+                          input.input-small.time-field(type='text', placeholder='đóng')
+                          button.btn.j-add-interval(title='')
+                            i.icon-plus
+                      td(style='vertical-align: middle;')
+                        //
+                           <button class="btn btn-info j-get-from-prev-day" title="">Như hôm trước</button> 
+                      td(style='vertical-align: middle;')
+                        button.btn.btn-danger.j-set-closed Đóng cửa
+                    tr(data-weekday='tue')
+                      td(style='vertical-align: middle;') Thứ 3
+                      td.ctrl-limit(style='vertical-align: middle;')
+                        .j-day-hours
+                          input.input-small.time-field(type='text', placeholder='mở')
+                          input.input-small.time-field(type='text', placeholder='đóng')
+                          button.btn.j-add-interval(title='')
+                            i.icon-plus
+                      td(style='vertical-align: middle;')
+                        button.btn.btn-info.j-get-from-prev-day(title='') Như hôm trước
+                      td(style='vertical-align: middle;')
+                        button.btn.btn-danger.j-set-closed Đóng cửa
+                    tr(data-weekday='wed')
+                      td(style='vertical-align: middle;') Thứ 4
+                      td#fuckingMonday(style='vertical-align: middle;')
+                        .j-day-hours
+                          input.input-small.time-field(type='text', placeholder='mở')
+                          input.input-small.time-field(type='text', placeholder='đóng')
+                          button.btn.j-add-interval(title='')
+                            i.icon-plus
+                      td(style='vertical-align: middle;')
+                        button.btn.btn-info.j-get-from-prev-day(title='') Như hôm trước
+                      td(style='vertical-align: middle;')
+                        button.btn.btn-danger.j-set-closed Đóng cửa
+                    tr(data-weekday='thu')
+                      td(style='vertical-align: middle;') Thứ 5
+                      td#l-thu(style='vertical-align: middle;')
+                        .j-day-hours
+                          input.input-small.time-field(type='text', placeholder='mở')
+                          input.input-small.time-field(type='text', placeholder='đóng')
+                          button.btn.j-add-interval(title='')
+                            i.icon-plus
+                      td(style='vertical-align: middle;')
+                        button.btn.btn-info.j-get-from-prev-day(title='') Như hôm trước
+                      td(style='vertical-align: middle;')
+                        button.btn.btn-danger.j-set-closed Đóng cửa
+                    tr(data-weekday='fri')
+                      td(style='vertical-align: middle;') Thứ 6
+                      td#fuckingMonday(style='vertical-align: middle;')
+                        .j-day-hours
+                          input.input-small.time-field(type='text', placeholder='mở')
+                          input.input-small.time-field(type='text', placeholder='đóng')
+                          button.btn.j-add-interval(title='')
+                            i.icon-plus
+                      td(style='vertical-align: middle;')
+                        button.btn.btn-info.j-get-from-prev-day(title='') Như hôm trước
+                      td(style='vertical-align: middle;')
+                        button.btn.btn-danger.j-set-closed Đóng cửa
+                    tr(data-weekday='sat')
+                      td(style='vertical-align: middle;') Thứ 7
+                      td#fuckingMonday(style='vertical-align: middle;')
+                        .j-day-hours
+                          input.input-small.time-field(type='text', placeholder='mở')
+                          input.input-small.time-field(type='text', placeholder='đóng')
+                          button.btn.j-add-interval(title='')
+                            i.icon-plus
+                      td(style='vertical-align: middle;')
+                        button.btn.btn-info.j-get-from-prev-day(title='') Như hôm trước
+                      td(style='vertical-align: middle;')
+                        button.btn.btn-danger.j-set-closed Đóng cửa
+                    tr(data-weekday='sun')
+                      td(style='vertical-align: middle;') CN
+                      td#fuckingMonday(style='vertical-align: middle;')
+                        .j-day-hours
+                          input.input-small.time-field(type='text', placeholder='mở')
+                          input.input-small.time-field(type='text', placeholder='đóng')
+                          button.btn.j-add-interval(title='')
+                            i.icon-plus
+                      td(style='vertical-align: middle;')
+                        button.btn.btn-info.j-get-from-prev-day(title='') Như hôm trước
+                      td(style='vertical-align: middle;')
+                        button.btn.btn-danger.j-set-closed Đóng cửa
+                //
+                   table 
+                .pull-left
+                  button.btn.btn-primary(type='submit') Lưu
+                  button.btn Cancel
+    //
+       Create new record 
+    script(src='js/bootstrap.js')
+    script(type='text/javascript')
+      var limit = 3;
+      $(function() {
+      $(document).on("click", ".j-add-interval", function (event) {
+      event.preventDefault();
+      var dayHours = $(this).closest('.j-day-hours');
+      var hoursContainer = $(this).closest('td');
+      // limit time interval to only 3
+      if(hoursContainer.children().length < limit)
+      dayHours.clone().appendTo(hoursContainer).find('input').val('');
+      else
+      console.log('over3');
+      });
+      });

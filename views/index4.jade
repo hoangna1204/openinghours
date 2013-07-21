@@ -1,0 +1,36 @@
+!!! 5
+html(lang='en')
+head
+    meta(charset='utf-8')
+    title Giờ mở cửa
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(href='css/bootstrap.css', rel='stylesheet')
+    link(href='css/bootstrap-responsive.css', rel='stylesheet')
+    link(rel='stylesheet', href='font-awesome/css/font-awesome.min.css')
+    link(href='css/customize.css', rel='stylesheet')
+    script(src='js/jquery-2.0.3.min.js')
+    script(type='text/javascript', src='js/coolclock.js')
+    script(type='text/javascript', src='js/moreskins.js')
+  body
+    .subnav
+      ul.nav.nav-pills
+        li.
+          a(href='#typography') Đăng nhập
+        li.
+          a(href='#navbar') Đăng kí
+        li.
+          a(href='#navbar') Thêm mới
+        li.
+          a(href='#buttons') About
+    .container
+      .row.centered
+        canvas#c1.CoolClock(width='170', height='170')
+        h2.bigText Giờ mở cửa
+        form
+          .input-append
+            input.input-xxlarge(type='text', placeholder='Thời gian mở cửa của ...', x-webkit-speech='x-webkit-speech', speech='speech')
+            button.btn.btn-success(type='button')
+              i.icon-search
+    script(src='js/bootstrap.js')
