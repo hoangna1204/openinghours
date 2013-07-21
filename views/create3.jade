@@ -8,27 +8,27 @@ head
     meta(name='author', content='')
     //
        Le styles 
-    link(href='public/stylesheets/bootstrap.css', rel='stylesheet')
-    link(href='public/stylesheets/bootstrap-responsive.css', rel='stylesheet')
-    link(rel='stylesheet', href='public/font-awesome/css/font-awesome.min.css')
-    link(href='public/stylesheets/bootstrap-timepicker.min.css', rel='stylesheet')
-    link(href='public/stylesheets/customize.css', rel='stylesheet')
+    link(href='/stylesheets/bootstrap.css', rel='stylesheet')
+    link(href='/stylesheets/bootstrap-responsive.css', rel='stylesheet')
+    link(rel='stylesheet', href='/font-awesome/css/font-awesome.min.css')
+    link(href='/stylesheets/bootstrap-timepicker.min.css', rel='stylesheet')
+    link(href='/stylesheets/customize.css', rel='stylesheet')
     link(rel='stylesheet', href='http://cdn.leafletjs.com/leaflet-0.6.3/leaflet.css')
-    script(src='public/javascripts/jquery-2.0.3.min.js')
-    script(type='text/javascript', src='public/javascripts/coolclock.js')
-    script(type='text/javascript', src='public/javascripts/moreskins.js')
+    script(src='/javascripts/jquery-2.0.3.min.js')
+    script(type='text/javascript', src='/javascripts/coolclock.js')
+    script(type='text/javascript', src='/javascripts/moreskins.js')
     script(src='http://cdn.leafletjs.com/leaflet-0.6.3/leaflet.js')
-    script(src='public/javascripts/bootstrap-timepicker.min.js')
+    script(src='/javascripts/bootstrap-timepicker.min.js')
   body
     .subnav
       ul.nav.nav-pills
-        li.
+        li
           a(href='#typography') Đăng nhập
-        li.
+        li
           a(href='#navbar') Đăng kí
-        li.
+        li
           a(href='#navbar') Thêm mới
-        li.
+        li
           a(href='#buttons') About
     .container
       .row.centered
@@ -203,7 +203,7 @@ head
                   button.btn Cancel
     //
        Create new record 
-    script(src='public/javascripts/bootstrap.js')
+    script(src='/javascripts/bootstrap.js')
     script(type='text/javascript')
       var limit = 3;
       $(function() {
