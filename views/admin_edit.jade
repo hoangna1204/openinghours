@@ -1,7 +1,7 @@
 extends layout
 block content
     h1= title
-    div(class="createadmin")
+    .createadmin
         form( method="post", action="")
              span Email :
              input( type="text", name="txt_email", value="#{admin.email}", disabled="disabled")

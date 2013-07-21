@@ -4,8 +4,8 @@ block content
     h1= title
     #admins
       - each admin in admins
-        div(class="admin")
-          div(class="id") 
+        .admin
+          .id
              a(href="admin/view/" + admin._id.toHexString()) #{admin._id}
-          div(class="email") #{admin.email}
-          div(class="password") #{admin.password}
+          .email #{admin.email}
+          .password #{admin.password}
