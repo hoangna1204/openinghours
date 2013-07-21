@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1= title
+    #categories
+      - each category in categories
+        .category
+          .id
+             a(href="category/view/" + category._id.toHexString()) #{category._id}
+          .name #{category.name}

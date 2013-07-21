@@ -1,0 +1,14 @@
+extends layout
+block content
+	.container
+		h3 = title
+		.create_category
+			form( method = "post", action = "" )
+				.control-group
+					label( class = "control-label" ) Name
+					.controls
+						input( type = "text", name = "txt_name", placeholder = "category" )
+				.control-group
+					label(class = "control-label" ) 
+					.controls
+						input( type = "submit", value = "Create", class = "btn btn-success")
