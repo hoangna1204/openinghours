@@ -1,8 +1,11 @@
 extends layout
 block content
-    h1= title
-    .delete_admin
-        form( method="post", action="")
-             span Are you sure to delete this admin: 
-             span #{admin.email}
-             input(type="submit", value="Delete", class = "btn btn-danger")
+	.container
+		h3= title
+		.delete_admin
+			form( method="post", action="")
+				span Are you sure to delete this admin: 
+				b #{admin.email}
+				.control-buttons
+					input(type="submit", value="Delete", class = "btn btn-danger") 
+					a.btn(href="/admin") Cancel
