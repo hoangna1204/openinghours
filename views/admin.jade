@@ -1,5 +1,5 @@
 extends layout
-- var count = 1
+
 block content
 	.container
 		h3= title
@@ -14,9 +14,9 @@ block content
 								td password
 								td
 						tbody
-							- each admin in admins
+							- each admin, i in admins
 								tr
-									td #{count}
+									td #{i+1}
 									td #{admin.email}
 									td #{admin.password}
 									td 
