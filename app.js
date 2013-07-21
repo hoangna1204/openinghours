@@ -13,7 +13,6 @@ var express = require('express')
   , dev = require('./routes/dev')
   , routes = require('./routes')
   , admin = require('./routes/admin')
-  , category = require('./routes/category')
   , user = require('./routes/user')
   , new_hi = require('./routes/hello')
   , search = require('./routes/search');
@@ -68,24 +67,6 @@ app.get('/admin/delete/:_id', admin.delete);
 app.post('/admin/delete/:_id', admin.doDelete);
 
 //-----------------//
-
-//------Category------//
-//Create
-app.get('/category/create', category.create);
-app.post('/category/create', category.doCreate);
-
-//Read
-app.get('/category', category.viewAll);
-app.get('/category/view/:_id', category.view);
-
-//Update
-app.get('/category/edit/:_id', category.edit);
-app.post('/category/edit/:_id', category.doEdit);
-
-//Delete
-
-app.get('/category/delete/:_id', category.delete);
-app.post('/category/delete/:_id', category.doDelete);
 
 
 http.createServer(app).listen(app.get('port'), function(){
