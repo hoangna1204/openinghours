@@ -1,8 +1,0 @@
-extends layout
-block content
-    h1= title
-    .delete_category
-        form( method="post", action="")
-             span Are you sure to delete this category: 
-             span #{category.name}
-             input(type="submit", value="Delete", class = "btn btn-danger")
