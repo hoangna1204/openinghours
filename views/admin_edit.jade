@@ -1,17 +1,18 @@
 extends layout
 block content
-	h1= title
-	.createadmin
-			form( method = "post", action = "" )
-				.control-group
-					label( class = "control-label" ) Email
-					.controls
-						input( type="text", name="txt_email", value="#{admin.email}", disabled="disabled")
-				.control-group
-					label( class = "control-label" ) Password
-					.controls
-						input(type="password", name="txt_password", value="#{admin.password}")
-				.control-group
-					label(class = "control-label" ) 
-					.controls
-						input(type="submit", value="Update", class="btn")
+	.container
+		h3= title
+		.createadmin
+				form( method = "post", action = "" )
+					.control-group
+						label( class = "control-label" ) Email
+						.controls
+							input( type="text", name="txt_email", value="#{admin.email}", disabled="disabled")
+					.control-group
+						label( class = "control-label" ) Password
+						.controls
+							input(type="password", name="txt_password", value="#{admin.password}")
+					.control-group
+						label(class = "control-label" ) 
+						.controls
+							input(type="submit", value="Update", class="btn")
