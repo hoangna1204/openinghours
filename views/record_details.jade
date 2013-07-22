@@ -13,7 +13,7 @@ block content
        Create new record 
     .container
         .row
-            .span5.offset1
+            .span4.offset1
               h3 Tên dịch vụ 
               table.table-condensed(data-type='normal')
                 tbody
@@ -76,12 +76,20 @@ block content
                         td 6:00 - 18:00
             .span1
                   .h-accuracy(style="margin-top:70px")
-                    a.btn.btn-success(href="#")
-                       i.icon-thumbs-up Đúng
-                    span(style="padding-left:35%") (30)
-                    a.btn.btn-danger(href="#")
-                       i.icon-thumbs-down &nbsp;&nbsp;&nbsp;  Sai
-                    span(style="padding-left:35%") (0)
+                    table.table-condensed
+                      tbody
+                        tr
+                          td
+                            a.btn.btn-success.btn-large(href="#")
+                              i.icon-smile.icon-large
+                          td
+                            span 30
+                        tr
+                          td
+                            a.btn.btn-danger.btn-large(href="#")
+                              i.icon-frown.icon-large    
+                          td
+                            span 0
     .container
         .row
             .span6.offset1(style="margin-top:70px")
