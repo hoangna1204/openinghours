@@ -43,7 +43,7 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/hello',new_hi.hello);
 app.get('/hello/r',new_hi.helloRend);
-app.get('/dev/jade', dev.testJade);
+app.get('/dev/jade', dev.testJade); // /dev/jade --> url pattern
 
 app.get('/search/:key',search.doSearch);
 

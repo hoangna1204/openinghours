@@ -1,0 +1,33 @@
+{
+    "ownership":true,
+    "name":"service A",
+    "address":{
+        "city":"Hanoi",
+        "houseNum":"45",
+        "street":"NLB",
+        "extension":"more"
+    },
+    "web":"http://google.com",
+    "phone":"4434",
+    "fax":"434",
+    "category":"eating",
+    "description":"desc",
+    "openinghours":[{
+        "mon":[{"from":"","to":""}],
+        "tue":[{"from":"","to":""}],
+        "wed":[{"from":"","to":""}],
+        "thu":[{"from":"","to":""}],
+        "fri":[{"from":"","to":""}],
+        "sat":[{"from":"","to":""}],
+        "sun":[{"from":"","to":""}]
+    }],
+    "reviews":[{
+        "date":"new Date()",
+        "author":"author",
+        "content":"content"}]
+    ,
+    "accuracy":{
+        "up":45,
+        "down":0
+    }
+}

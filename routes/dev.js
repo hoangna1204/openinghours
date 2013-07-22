@@ -1,3 +1,3 @@
 exports.testJade = function(req, res){
-  res.render('create3', { hoang: 'Hello you' });
+  res.render('record_create', { hoang: 'Hello you' });
 };
