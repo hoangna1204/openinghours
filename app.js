@@ -13,7 +13,6 @@ var express = require('express')
   , dev = require('./routes/dev')
   , routes = require('./routes')
   , admin = require('./routes/admin')
-  , record = require('./routes/record')
   , user = require('./routes/user')
   , new_hi = require('./routes/hello')
   , search = require('./routes/search');
@@ -71,11 +70,7 @@ app.post('/admin/delete/:_id', admin.doDelete);
 
 //------Record------//
 //create
-app.get('/record/create', record.create);
-app.post('/record/create', record.doCreate);
 
-//Read
-app.get('/record', record.viewAll);
 
 
 //-----------------//
