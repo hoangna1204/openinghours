@@ -15,7 +15,7 @@ exports.doCreate = function(req, res){
         email: req.param('txt_email'),
         password: req.param('txt_password')
     }, function( error, docs) {
-        res.redirect('/admin')
+        res.redirect('/admin');
     });
 };
 
@@ -45,7 +45,7 @@ exports.doEdit = function(req, res) {
         _id: req.params._id,
         password: req.param('txt_password')
     }, function( error, docs) {
-        res.redirect('/admin')
+        res.redirect('/admin');
     });
 }
 

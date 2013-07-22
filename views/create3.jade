@@ -1,35 +1,5 @@
-!!! 5
-html(lang='en')
-head
-    meta(charset='utf-8')
-    title Thêm dịch vụ
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    meta(name='description', content='')
-    meta(name='author', content='')
-    //
-       Le styles 
-    link(href='/stylesheets/bootstrap.css', rel='stylesheet')
-    link(href='/stylesheets/bootstrap-responsive.css', rel='stylesheet')
-    link(rel='stylesheet', href='/font-awesome/css/font-awesome.min.css')
-    link(href='/stylesheets/bootstrap-timepicker.min.css', rel='stylesheet')
-    link(href='/stylesheets/customize.css', rel='stylesheet')
-    link(rel='stylesheet', href='http://cdn.leafletjs.com/leaflet-0.6.3/leaflet.css')
-    script(src='/javascripts/jquery-2.0.3.min.js')
-    script(type='text/javascript', src='/javascripts/coolclock.js')
-    script(type='text/javascript', src='/javascripts/moreskins.js')
-    script(src='http://cdn.leafletjs.com/leaflet-0.6.3/leaflet.js')
-    script(src='/javascripts/bootstrap-timepicker.min.js')
-  body
-    .subnav
-      ul.nav.nav-pills
-        li
-          a(href='#typography') Đăng nhập
-        li
-          a(href='#navbar') Đăng kí
-        li
-          a(href='#navbar') Thêm mới
-        li
-          a(href='#buttons') About
+extends layout
+block content
     .container
       .row.centered
         form

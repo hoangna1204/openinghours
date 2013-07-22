@@ -13,6 +13,7 @@ var express = require('express')
   , dev = require('./routes/dev')
   , routes = require('./routes')
   , admin = require('./routes/admin')
+  , record = require('./routes/record')
   , user = require('./routes/user')
   , new_hi = require('./routes/hello')
   , search = require('./routes/search');
@@ -43,7 +44,7 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/hello',new_hi.hello);
 app.get('/hello/r',new_hi.helloRend);
-app.get('/dev/index4', dev.index4);
+app.get('/dev/jade', dev.testJade);
 
 app.get('/search/:key',search.doSearch);
 
@@ -65,6 +66,17 @@ app.post('/admin/edit/:_id', admin.doEdit);
 
 app.get('/admin/delete/:_id', admin.delete);
 app.post('/admin/delete/:_id', admin.doDelete);
+
+//-----------------//
+
+//------Record------//
+//create
+app.get('/record/create', record.create);
+app.post('/record/create', record.doCreate);
+
+//Read
+app.get('/record', record.viewAll);
+
 
 //-----------------//
 

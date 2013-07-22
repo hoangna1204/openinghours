@@ -1,3 +1,3 @@
-exports.index4 = function(req, res){
-  res.render('index4', { hoang: 'Hello you' });
+exports.testJade = function(req, res){
+  res.render('create3', { hoang: 'Hello you' });
 };

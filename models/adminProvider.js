@@ -18,7 +18,7 @@ AdminProvider.prototype.getCollection= function(callback) {
 
 AdminProvider.prototype.findAll = function(callback) {
     this.getCollection(function(error, admin_collection) {
-      if( error ) callback(error)
+      if( error ) callback(error);
       else {
         admin_collection.find().toArray(function(error, results) {
           if( error ) callback(error);
