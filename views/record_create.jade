@@ -175,18 +175,3 @@ block content
        Create new record 
     script(src='/javascripts/bootstrap.js')
     script(src='/javascripts/createhelper.js')
-
-    script(type='text/javascript')
-      var limit = 3;
-      $(function() {
-      $(document).on("click", ".j-add-interval", function (event) {
-      event.preventDefault();
-      var dayHours = $(this).closest('.j-day-hours');
-      var hoursContainer = $(this).closest('td');
-      // limit time interval to only 3
-      if(hoursContainer.children().length < limit)
-      dayHours.clone().appendTo(hoursContainer).find('input').val('');
-      else
-      console.log('over3');
-      });
-      });
