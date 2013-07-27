@@ -13,6 +13,7 @@ var express = require('express')
   , dev = require('./routes/dev')
   , routes = require('./routes')
   , admin = require('./routes/admin')
+  , record = require('./routes/record')
   , user = require('./routes/user')
   , new_hi = require('./routes/hello')
   , search = require('./routes/search');
@@ -43,7 +44,7 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/hello',new_hi.hello);
 app.get('/hello/r',new_hi.helloRend);
-app.get('/dev/jade', dev.testJade); // /dev/jade --> url pattern, testJade o trong dev.js
+app.get('/dev/jade', dev.testJade); // /dev/jade --> url pattern
 
 app.get('/search/:key',search.doSearch);
 
@@ -69,11 +70,28 @@ app.post('/admin/delete/:_id', admin.doDelete);
 //-----------------//
 
 //------Record------//
-//create
+//Create
+app.get('/record/create', record.create);
+app.post('/record/create', record.doCreate);
 
+//Read
+app.get('/record', record.viewAll);
+app.get('/record/view/:_id', record.view);
 
+//Update
+app.get('/record/edit/:_id', record.edit);
+app.post('/record/edit/:_id', record.doEdit);
 
+//Delete
+
+app.get('/record/delete/:_id', record.delete);
+app.post('/record/delete/:_id', record.doDelete);
+
+//vote
+app.get('/record/voteUp/:_id', record.doVoteUp);
+app.get('/record/voteDown/:_id', record.doVoteDown);
 //-----------------//
+
 
 
 http.createServer(app).listen(app.get('port'), function(){

@@ -1,0 +1,157 @@
+extends layout
+block content
+    .container
+      .row.centered
+        form
+          .input-append
+            input.input-xxlarge(type='text', placeholder='Thời gian mở cửa của ...', x-webkit-speech='x-webkit-speech', speech='speech')
+            button.btn.btn-success(type='button')
+              i.icon-search
+    //
+       /container 
+    //
+       Create new record 
+    .container
+        .row
+            .span4.offset1
+              h3 #{record.name} 
+              table.table-condensed(data-type='normal')
+                tbody
+                  tr
+                    td
+                      h4 Địa chỉ
+                    td
+                      span #{record.street}, #{record.city}
+                  tr
+                    td 
+                      span Số điện thoại
+                    td
+                      span #{record.phone}
+                  tr
+                    td
+                      span Fax
+                    td
+                      span #{record.fax}
+                  tr
+                    td 
+                      span Loại dịch vụ
+                    td
+                      span #{record.main_category}
+                  tr
+                    td
+                      span Đánh giá
+                    td
+                      i.icon-star
+                      i.icon-star
+                      i.icon-star
+                      i.icon-star
+                      i.icon-star-half-empty 
+                      a(href="#") (41) 
+            .span2
+                  h3 Giờ mở cửa
+                  table.table-condensed
+                    tbody
+                      if today == 1
+                        tr(style="border:thin dotted black")
+                      else
+                        tr
+                          td 
+                            b Thứ 2
+                          td 
+                            b 
+                              -each time in record.openinghours.mon
+                                if time.from == "--" && time.to == "--"
+                                  Đóng cửa
+                                else if time.from !="" && time.to != ""
+                                  span #{time.from} - #{time.to} | 
+                      if today == 1
+                        tr(style="border:thin dotted black")
+                      else
+                        tr
+                          td Thứ 3
+                          td
+                            -each time in record.openinghours.tue
+                              if time.from == "--" && time.to == "--"
+                                Đóng cửa
+                              else if time.from !="" && time.to != ""
+                                span #{time.from} - #{time.to} | 
+                      if today == 1
+                        tr(style="border:thin dotted black")
+                      else
+                        tr
+                          td Thứ 4
+                          td
+                            -each time in record.openinghours.wed
+                              if time.from == "--" && time.to == "--"
+                                Đóng cửa
+                              else if time.from !="" && time.to != ""
+                                span #{time.from} - #{time.to} | 
+                      if today == 1
+                        tr(style="border:thin dotted black")
+                      else
+                        tr
+                          td Thứ 5
+                          td
+                            -each time in record.openinghours.thu
+                              if time.from == "--" && time.to == "--"
+                                Đóng cửa
+                              else if time.from !="" && time.to != ""
+                                span #{time.from} - #{time.to} | 
+                      if today == 1
+                        tr(style="border:thin dotted black")
+                      else
+                        tr
+                          td Thứ 6
+                          td
+                            -each time in record.openinghours.fri
+                              if time.from == "--" && time.to == "--"
+                                Đóng cửa
+                              else if time.from !="" && time.to != ""
+                                span #{time.from} - #{time.to} | 
+                      if today == 1
+                        tr(style="border:thin dotted black")
+                      else          
+                        tr
+                          td Thứ 7
+                          td
+                            -each time in record.openinghours.sat
+                              if time.from == "--" && time.to == "--"
+                                Đóng cửa
+                              else if time.from !="" && time.to != ""
+                                span #{time.from} - #{time.to} | 
+                      if today == 1
+                        tr(style="border:thin dotted black")
+                      else
+                        tr
+                          td Chủ nhật
+                          td
+                            -each time in record.openinghours.sun
+                              if time.from == "--" && time.to == "--"
+                                Đóng cửa
+                              else if time.from !="" && time.to != ""
+                                span #{time.from} - #{time.to} | 
+            .span1
+                  .h-accuracy(style="margin-top:70px")
+                    table.table-condensed
+                      tbody
+                        tr
+                          td
+                            a.btn.btn-success.btn-large(href="/record/voteUp/#{record._id}")
+                              i.icon-smile.icon-large
+                          td
+                            span #{record.accuracy.up}
+                        tr
+                          td
+                            a.btn.btn-danger.btn-large(href="/record/voteDown/#{record._id}")
+                              i.icon-frown.icon-large    
+                          td
+                            span #{record.accuracy.down}
+    .container
+        .row
+            .span6.offset1(style="margin-top:70px")
+                .h-reviews
+                  - each review in record.reviews
+                    p Nhận xét của #{review.author}@
+                    p #{review.content}
+
+script(src='/javascripts/bootstrap.js')

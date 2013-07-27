@@ -1,0 +1,144 @@
+extends layout
+block content
+  .container
+    .row.centered
+      .form
+        .input-append
+          input.input-xxlarge(type="text", placeholder="Thời gian mở cửa của ...", x-webkit-speech speech)
+            button.btn.btn-success(type="button")
+              i.icon-search
+  .container
+    - each record in records
+      .row
+        .span7.offset1
+          .result.row(style="background-color:#F2F2F2")
+            .span5
+              .h3
+                a(href="/record/view/#{record._id}") #{record.name}
+              p #{record.street}, #{record.city}
+              .review
+                span 3.5&nbsp;
+                i.icon-star
+                i.icon-star
+                i.icon-star
+                i.icon-star-half-full
+                i.icon-star-empty
+                span dựa trên 21 bình luận
+                i.icon-comment-alt
+              div
+                i.icon-time 
+                span
+                  if today == 0
+                    b Chủ nhật:
+                    - each time in record.openinghours.sun
+                      if time.from == "--" && time.to == "--"
+                        Đóng cửa
+                      else
+                        span #{time.from} - #{time.to} | 
+                  else if today == 1
+                    b Thứ 2:
+                    - each time in record.openinghours.mon
+                      if time.from == "--" && time.to == "--"
+                        Đóng cửa
+                      else
+                        span #{time.from} - #{time.to} | 
+                  else if today == 2
+                    b Thứ 3
+                    - each time in record.openinghours.tue
+                      if time.from == "--" && time.to == "--"
+                        Đóng cửa
+                      else
+                        span #{time.from} - #{time.to} | 
+                  else if today = 3
+                    b Thứ 4: 
+                    - each time in record.openinghours.wed
+                      if time.from == "--" && time.to == "--"
+                        Đóng cửa
+                      else
+                        span #{time.from} - #{time.to} | 
+                  else if today = 4
+                    b Thứ 5: 
+                    - each time in record.openinghours.thu
+                      if time.from == "--" && time.to == "--"
+                        Đóng cửa
+                      else
+                        span #{time.from} - #{time.to} | 
+                  else if today = 5
+                    b Thứ 6: 
+                    - each time in record.openinghours.fri
+                      if time.from == "--" && time.to == "--"
+                        Đóng cửa
+                      else
+                        span #{time.from} - #{time.to} | 
+                  else if today = 6
+                    b Thứ 7: 
+                    - each time in record.openinghours.sat
+                      if time.from == "--" && time.to == "--"
+                        Đóng cửa
+                      else if time.from !="" && time.to != ""
+                        span #{time.from} - #{time.to} | 
+                a.see-all(href="#")...
+              .see-all-details(style="display:none")
+                ul
+                    li
+                      span Thứ 2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      -each time in record.openinghours.mon
+                        if time.from == "--" && time.to == "--"
+                          Đóng cửa
+                        else if time.from !="" && time.to != ""
+                          span #{time.from} - #{time.to} | 
+                    li
+                      span Thứ 3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      -each time in record.openinghours.tue
+                        if time.from == "--" && time.to == "--"
+                          Đóng cửa
+                        else if time.from !="" && time.to != ""
+                          span #{time.from} - #{time.to} | 
+                    li
+                      span Thứ 4:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      -each time in record.openinghours.wed
+                        if time.from == "--" && time.to == "--"
+                          Đóng cửa
+                        else if time.from !="" && time.to != ""
+                          span #{time.from} - #{time.to} | 
+                    li
+                      span Thứ 5:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      -each time in record.openinghours.thu
+                        if time.from == "--" && time.to == "--"
+                          Đóng cửa
+                        else if time.from !="" && time.to != ""
+                          span #{time.from} - #{time.to} | 
+                    li
+                      span Thứ 6:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      -each time in record.openinghours.fri
+                        if time.from == "--" && time.to == "--"
+                          Đóng cửa
+                        else if time.from !="" && time.to != ""
+                          span #{time.from} - #{time.to} | 
+                    li
+                      span Thứ 7:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      -each time in record.openinghours.sat
+                        if time.from == "--" && time.to == "--"
+                          Đóng cửa
+                        else if time.from !="" && time.to != ""
+                          span #{time.from} - #{time.to} | 
+                    li
+                      span Chủ nhật:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      -each time in record.openinghours.sun
+                        if time.from == "--" && time.to == "--"
+                          Đóng cửa
+                        else if time.from !="" && time.to != ""
+                          span #{time.from} - #{time.to} | 
+            .span2
+              img(src="/images/dummy.png", style="padding-top:15px")
+              div
+                i.icon-facebook.pull-right
+                i.icon-thumbs-up-alt.pull-right
+  script(src='/javascripts/bootstrap.js')
+  script.
+    $('.icon-star').css("color","orange");
+    $('.icon-star-half-full').css("color","orange");
+    $('.icon-star-empty').css("color","orange");
+    $('.see-all').on("click",function() {
+      $(this).parent().next('div.see-all-details').slideToggle(200);
+    });

@@ -28,13 +28,13 @@ block content
                     | Tên
                     span.b-required *
                   .controls
-                    input#id_name(type='text', name='name', value='', placeholder='Tên dịch vụ')
+                    input#id_name(type='text', name='name', value='#{record.name}', placeholder='Tên dịch vụ')
                 .control-group
                   label.control-label(for='id_city')
                     | Thành phố
                     span.b-required *
                   .controls
-                    input#id_city.ui-autocomplete-input(type='text', name='city', value='', placeholder='Tên thành phố', autocomplete='off')
+                    input#id_city.ui-autocomplete-input(type='text', name='city', value='#{record.city}', placeholder='Tên thành phố', autocomplete='off')
                     span.ui-helper-hidden-accessible(role='status', aria-live='polite')
                     input#id_city_id(name='city_id', type='hidden')
                 .control-group
@@ -43,20 +43,20 @@ block content
                     span.b-required
                       | *
                   .controls
-                    input#id_street(type='text', name='street', value='', placeholder='Số nhà, địa chỉ')
+                    input#id_street(type='text', name='street', value='#{record.street}', placeholder='Số nhà, địa chỉ')
                 .control-group
                   label.control-label(for='id_website') Trang Web
                   .controls
-                    input#id_website(type='text', name='website', value='', placeholder='http://example.com')
+                    input#id_website(type='text', name='website', value='#{record.website}', placeholder='http://example.com')
                 .control-group
                   label.control-label(for='id_phone') Điện thoại
                   .controls
-                    input#id_phone(type='text', name='phone', value='', placeholder='09938177232')
+                    input#id_phone(type='text', name='phone', value='#{record.phone}', placeholder='09938177232')
                 .control-group
                   label.control-label(for='id_fax')
                     | Fax
                   .controls
-                    input#id_fax(type='text', name='fax', value='', placeholder='82983728')
+                    input#id_fax(type='text', name='fax', value='#{record.fax}', placeholder='82983728')
                 .control-group
                   label.control-label(for='id_main_category')
                     | Danh mục
@@ -64,16 +64,34 @@ block content
                   .controls
                     select#id_main_category.input-xlarge(name='main_category')
                       option(value='') Chọn danh mục
-                      option(value='Quán ăn / Nhà hàng') Quán ăn / Nhà hàng
-                      option(value='Bưu điện') Bưu điện
-                      option(value='Dịch vụ') Dịch vụ
-                      option(value='In ấn') In ấn
-                      option(value='Đồ điện tử') Đồ điện tử
-                      option(value='Nhà đất') Nhà đất
+                      if record.main_category == "Quán ăn / Nhà hàng"
+                        option(value='Quán ăn / Nhà hàng', selected) Quán ăn / Nhà hàng
+                      else
+                        option(value='Quán ăn / Nhà hàng') Quán ăn / Nhà hàng
+                      if record.main_category == "Bưu điện"
+                        option(value='Bưu điện', selected) Bưu điện
+                      else
+                        option(value='Bưu điện') Bưu điện
+                      if record.main_category == "Dịch vụ"
+                        option(value='Dịch vụ', selected) Dịch vụ
+                      else
+                        option(value='Dịch vụ') Dịch vụ
+                      if record.main_category == "In ấn"
+                        option(value='In ấn', selected) In ấn
+                      else
+                        option(value='In ấn') In ấn
+                      if record.main_category == "Đồ điện tử"
+                        option(value='Đồ điện tử', selected) Đồ điện tử
+                      else
+                        option(value='Đồ điện tử') Đồ điện tử
+                      if record.main_category == "Nhà đất"
+                        option(value='Nhà đất', selected) Nhà đất
+                      else
+                        option(value='Nhà đất') Nhà đất
                 .control-group
                   label.control-label(for='id_description') Miêu tả
                   .controls
-                    textarea#id_description.input-xlarge(name='description', rows='5', placeholder='')
+                    textarea#id_description.input-xlarge(name='description', rows='5', placeholder='') #{record.name}
               .span6
                 label.control-label(for='id_hours')
                   | Thời gian mở cửa

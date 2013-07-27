@@ -1,0 +1,11 @@
+extends layout
+block content
+	.container
+		h3= title
+		.delete_record
+			form( method="post", action="")
+				span Are you sure to delete this record: 
+				b #{record.name}
+				.control-buttons
+					input(type="submit", value="Delete", class = "btn btn-danger") 
+					a.btn(href="/record") Cancel
